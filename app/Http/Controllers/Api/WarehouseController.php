@@ -56,7 +56,7 @@ class WarehouseController extends Controller
         $warehouse = Warehouse::query()->find($id);
 
         if ($warehouse === null) {
-            return new \Illuminate\Http\JsonResponse(['message' => 'Warehouse not found'], 404);
+            return new JsonResponse(['message' => 'Warehouse not found'], 404);
         }
 
         return new WarehouseResource($warehouse);
@@ -81,6 +81,6 @@ class WarehouseController extends Controller
         $warehouse = Warehouse::query()->findOrFail($id);
         $warehouse->delete();
 
-        return new \Illuminate\Http\JsonResponse(['message' => 'Warehouse deleted successfully']);
+        return new JsonResponse(['message' => 'Warehouse deleted successfully']);
     }
 }

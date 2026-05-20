@@ -65,7 +65,7 @@ class TransferService
 
     public function updateTransfer(Transfer $transfer, array $data, iterable $products): Transfer
     {
-        return DB::transaction(function () use ($transfer, $data, $products): \App\Models\Transfer {
+        return DB::transaction(function () use ($transfer, $data, $products): Transfer {
             // Revert stock from old transfer
             foreach ($transfer->transferDetails as $detail) {
                 // Re-increment the old source

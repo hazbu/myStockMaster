@@ -62,7 +62,7 @@ class ExpenseController extends Controller
         $expense = Expense::query()->find($id);
 
         if ($expense === null) {
-            return new \Illuminate\Http\JsonResponse(['message' => 'Expense not found'], 404);
+            return new JsonResponse(['message' => 'Expense not found'], 404);
         }
 
         return new ExpenseResource($expense);
@@ -87,6 +87,6 @@ class ExpenseController extends Controller
         $expense = Expense::query()->findOrFail($id);
         $expense->delete();
 
-        return new \Illuminate\Http\JsonResponse(['message' => 'Expense deleted successfully']);
+        return new JsonResponse(['message' => 'Expense deleted successfully']);
     }
 }

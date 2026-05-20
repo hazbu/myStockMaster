@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App\Livewire\Transfer;
 
-use Livewire\Attributes\Title;
-
 use App\Livewire\Forms\TransferForm;
 use App\Livewire\Utils\WithModels;
 use App\Services\TransferService;
@@ -14,6 +12,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Throwable;
 

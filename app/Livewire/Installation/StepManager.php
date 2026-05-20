@@ -118,9 +118,9 @@ class StepManager extends Component
             $this->database['port'] = env('DB_PORT', '3306');
             $this->database['database'] = env('DB_DATABASE', '');
             $this->database['username'] = env('DB_USERNAME', 'root');
-            
+
             $this->admin_email = 'admin@example.com';
-            
+
             $this->runPreflightChecks();
         }
     }
@@ -529,7 +529,7 @@ class StepManager extends Component
                 'company_tax' => $this->company_tax,
             ]);
         }
-        
+
         session(['selected_business_line' => $this->selected_business_line]);
         session(['install_demo_data' => $this->install_demo_data]);
     }

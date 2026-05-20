@@ -56,7 +56,7 @@ class SupplierController extends Controller
         $supplier = Supplier::query()->find($id);
 
         if ($supplier === null) {
-            return new \Illuminate\Http\JsonResponse(['message' => 'Supplier not found'], 404);
+            return new JsonResponse(['message' => 'Supplier not found'], 404);
         }
 
         return new SupplierResource($supplier);
@@ -81,6 +81,6 @@ class SupplierController extends Controller
         $supplier = Supplier::query()->findOrFail($id);
         $supplier->delete();
 
-        return new \Illuminate\Http\JsonResponse(['message' => 'Supplier deleted successfully']);
+        return new JsonResponse(['message' => 'Supplier deleted successfully']);
     }
 }
